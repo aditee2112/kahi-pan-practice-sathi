@@ -7,7 +7,7 @@ function Home() {
       <h1>Home Page</h1>
 
       <Link to="/user-form">
-        <button>Go to User Form hello</button>
+        <button>Go to User login</button>
       </Link>
     </div>
   );
