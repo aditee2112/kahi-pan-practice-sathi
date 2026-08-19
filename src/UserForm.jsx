@@ -17,6 +17,7 @@ const UserForm = () => {
       email: "",
       password: "",
       city: "",
+      phone: "",
     });
   };
 
@@ -31,7 +32,7 @@ const UserForm = () => {
     <div>
       {!submittedData && (
         <>
-          <h2>User login form</h2>
+          <h2>User login</h2>
 
           <form onSubmit={onHandleSubmit}>
             <div>
@@ -52,6 +53,18 @@ const UserForm = () => {
                 placeholder="Enter your email"
                 name="email"
                 onChange={onHandleInputChange}
+                required
+              />
+            </div>
+
+            <div>
+              <label> Phone:</label>
+              <input
+                type="tel"
+                placeholder="Enter your phone number"
+                name="phone"
+                onChange={onHandleInputChange}
+                pattern="[0-9]{10}"
                 required
               />
             </div>
@@ -78,7 +91,7 @@ const UserForm = () => {
               />
             </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Sign-up</button>
           </form>
         </>
       )}
