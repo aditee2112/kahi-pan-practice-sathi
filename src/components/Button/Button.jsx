@@ -1,13 +1,20 @@
 import { Button } from "@blueprintjs/core";
 import React from "react";
 
-const CustomButton = ({ buttonName, buttonType, buttonIntent }) => {
+const CustomButton = ({
+  buttonName,
+  buttonType,
+  buttonIntent,
+  onButtonClick,
+  buttonIcon,
+}) => {
   return (
     <Button
-      endIcon="arrow-right"
+      icon={buttonIcon}
       intent={buttonIntent || ""}
       text={buttonName}
       type={buttonType || "text"}
+      onClick={onButtonClick}
     />
   );
 };

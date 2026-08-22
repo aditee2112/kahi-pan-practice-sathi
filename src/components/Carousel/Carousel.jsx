@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import CustomButton from "../Button/Button";
+import { Link } from "react-router-dom";
 
 const Carousel = () => {
   const images = [
@@ -21,10 +23,25 @@ const Carousel = () => {
   };
 
   return (
-    <div className="carousel">
-      <button onClick={previousSlide}> {"<"} </button>
+    <div>
+      <h1>Oscar's Photos</h1>
+      <CustomButton buttonIcon="arrow-left" onButtonClick={previousSlide}>
+        {" "}
+        {"<"}{" "}
+      </CustomButton>
       <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
-      <button onClick={nextSlide}> {">"}</button>
+      <CustomButton buttonIcon="arrow-right" onButtonClick={nextSlide}>
+        {" "}
+        {">"}
+      </CustomButton>
+      <br />
+      <Link to="/" style={{ display: "inline-block", width: "fit-content" }}>
+        <CustomButton
+          buttonIcon="circle-arrow-left"
+          buttonName="Go to Home Page"
+          buttonIntent="warning"
+        />
+      </Link>
     </div>
   );
 };

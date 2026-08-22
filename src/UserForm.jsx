@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import CustomButton from "./components/Button/Button";
 
 const UserForm = () => {
   const [userDetails, setUserDetails] = useState({
@@ -103,6 +105,13 @@ const UserForm = () => {
           <p>City: {submittedData.city}</p>
         </>
       )}
+      <Link to="/" style={{ display: "inline-block", width: "fit-content" }}>
+        <CustomButton
+          buttonIcon="circle-arrow-left"
+          buttonIntent="warning"
+          buttonName="Go to Home Page"
+        />
+      </Link>
     </div>
   );
 };
