@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import CustomButton from "./components/Button/Button";
 
 const UserForm = () => {
   const [userDetails, setUserDetails] = useState({
@@ -17,6 +19,7 @@ const UserForm = () => {
       email: "",
       password: "",
       city: "",
+      phone: "",
     });
   };
 
@@ -31,7 +34,7 @@ const UserForm = () => {
     <div>
       {!submittedData && (
         <>
-          <h2>User Form</h2>
+          <h2>User login</h2>
 
           <form onSubmit={onHandleSubmit}>
             <div>
@@ -52,6 +55,18 @@ const UserForm = () => {
                 placeholder="Enter your email"
                 name="email"
                 onChange={onHandleInputChange}
+                required
+              />
+            </div>
+
+            <div>
+              <label> Phone:</label>
+              <input
+                type="tel"
+                placeholder="Enter your phone number"
+                name="phone"
+                onChange={onHandleInputChange}
+                pattern="[0-9]{10}"
                 required
               />
             </div>
@@ -78,7 +93,7 @@ const UserForm = () => {
               />
             </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Sign-up</button>
           </form>
         </>
       )}
@@ -90,6 +105,13 @@ const UserForm = () => {
           <p>City: {submittedData.city}</p>
         </>
       )}
+      <Link to="/" style={{ display: "inline-block", width: "fit-content" }}>
+        <CustomButton
+          buttonIcon="circle-arrow-left"
+          buttonIntent="warning"
+          buttonName="Go to Home Page"
+        />
+      </Link>
     </div>
   );
 };

@@ -1,0 +1,33 @@
+.main-container{
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.home-page-container{
+    width: 100%;
+    /* min-height: 100vh; */
+    text-align: center;
+    padding-top: 70px;
+    box-sizing: border-box;
+}
+
+.title-container{
+    font-family: 'fantasy';
+    font-size: 50px;
+}
+
+.button-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+    align-items: center;
+}
+
+.link-container{
+    display: inline-block;
+    width: fit-content;
+}
